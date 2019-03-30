@@ -28,4 +28,4 @@ The App dependes on the Arduino sending three things:
 
 ### DISCLAIMER
 
-This app was created for the sole purpose of isubmitting a class project. It's in no way ready for production use or in an optimal state. This was built using the [electron-quick-start template] (https://github.com/electron/electron-quick-start). 
+This app was created for the sole purpose of isubmitting a class project. It's in no way ready for production use or in an optimal state. This was built using the [electron-quick-start template](https://github.com/electron/electron-quick-start). 
