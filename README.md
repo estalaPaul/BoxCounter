@@ -24,7 +24,7 @@ npm start
 The App dependes on the Arduino sending three things:
   1. "Start": This string make a box appear at the beginning of the first assembly line.
   2. "Garra": This string signals that the claw is in a ready position and activates the movement of the box.
-  3. <Count>: This is the amount of boxes that have passed. Replace count with the number of boxes.
+  3. Count: This is the amount of boxes that have passed. Replace count with the number of boxes.
 
 ### DISCLAIMER
 
