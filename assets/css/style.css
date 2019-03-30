@@ -1,0 +1,252 @@
+body {
+    background-color: #f9f9f9;
+    overflow: hidden;
+    text-align: center;
+    font-family: Roboto;
+}
+h1 {
+    color: #364451;
+}
+p {
+    position: absolute;
+    top: 410px;
+    left: 1105px;
+    font-size: 2rem;
+}
+.claw, .claw2, .claw3 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-image: url("../img/claw.png");
+    background-size: contain;
+}
+.claw {
+    top: 110px;
+    left: 520px;
+}
+.claw-animation {
+    animation: firstClawMovement 2s forwards 1;
+}
+.claw2 {
+    top: 160px;
+    left: 520px;
+    visibility: hidden;
+}
+.claw2-animation {
+    animation: secondClawMovement 3s forwards 1;
+}
+.claw3 {
+    top: 160px;
+    left: 760px;
+    visibility: hidden;
+}
+.claw3-animation {
+    animation: thirdClawMovement 3s forwards 1;
+}
+.container {
+    position: absolute;
+    background-image: url("../img/container.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    top: 345px;
+    left: 1110px;
+    z-index: 10;
+}
+.box, .box2, .box3, .box4, .boxaid{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/crate.png");
+    background-size: contain;
+    visibility: hidden;
+}
+.box, .boxaid {
+    top: 245px;
+    left: 260px;
+}
+.box-animation {
+    animation: firstBoxMovement 3s forwards 1;
+}
+.boxaid {
+  visibility: hidden;
+}
+.box2 {
+    top: 245px;
+    left: 540px;
+    visibility: hidden;
+}
+.box2-animation {
+    animation: secondBoxMovement 3s forwards 2s 1;
+}
+.box3 {
+    top: 245px;
+    left: 760px;
+    visibility: hidden;
+}
+.box3-animation {
+    animation: thirdBoxMovement 3s forwards 1;
+}
+.box4 {
+    top: 245px;
+    left: 1130px;
+    visibility: hidden;
+}
+.box4-animation {
+    animation: fourthBoxMovement 1500ms forwards 1;
+}
+.band {
+    position: absolute;
+    width: 350px;
+    height: 25px;
+    top: 300px;
+    left: 250px;
+    background: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #364451;
+}
+.bandGear {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    background: #364451;
+    border-radius: 20px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    animation: gearRotation 3s linear infinite;
+    animation-play-state: paused;
+}
+.bandGear:nth-child(2) {
+    top: 2px;
+    left: 73px;
+}
+.bandGear:nth-child(3) {
+    top: 2px;
+    left: 161px;
+}
+.bandGear:nth-child(4) {
+    top: 2px;
+    left: 249px;
+}
+.bandGear:nth-child(5) {
+    top: 2px;
+    left: 328px;
+}
+.band2 {
+    position: absolute;
+    width: 350px;
+    height: 25px;
+    top: 300px;
+    left: 750px;
+    background: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #364451;
+}
+.band2Gear {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    background: #364451;
+    border-radius: 20px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    animation: gearRotation 3s linear infinite;
+    animation-play-state: paused;
+}
+.band2Gear:nth-child(2) {
+    top: 2px;
+    left: 73px;
+}
+.band2Gear:nth-child(3) {
+    top: 2px;
+    left: 161px;
+}
+.band2Gear:nth-child(4) {
+    top: 2px;
+    left: 249px;
+}
+.band2Gear:nth-child(5) {
+    top: 2px;
+    left: 328px;
+}
+@keyframes firstClawMovement {
+    0% {
+        top: 110px;
+        left: 520px;
+    }
+    100% {
+        top: 160px;
+        left: 520px;
+    }
+}
+@keyframes secondClawMovement {
+    0% {
+        top: 160px;
+        left: 520px;
+    }
+    100% {
+        top: 160px;
+        left: 740px;
+    }
+}
+@keyframes thirdClawMovement {
+    0% {
+        top: 160px;
+        left: 740px;
+    }
+    100% {
+        top: 110px;
+        left: 520px;
+    }
+}
+@keyframes gearRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes firstBoxMovement {
+    0% {
+        left: 260px;
+        visibility: visible;
+    }
+    100% {
+        left: 540px;
+    }
+}
+@keyframes secondBoxMovement {
+    0% {
+        left: 540px;
+    }
+    100% {
+        left: 760px;
+    }
+}
+@keyframes thirdBoxMovement {
+    0% {
+        left: 760px;
+    }
+    100% {
+        left: 1130px;
+    }
+}
+@keyframes fourthBoxMovement {
+    0% {
+        transform: rotate(-180deg);
+        top: 245px;
+    }
+    100% {
+        top: 360px;
+    }
+}

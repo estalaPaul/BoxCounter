@@ -2,18 +2,100 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Contador de Cajas</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <h1>Contador de Cajas</h1>
+    <p>Cajas: <span id="count">0</span></p>
+        <div class="claw"></div>
+        <div class="claw2"></div>
+        <div class="claw3"></div>
+        <div class="boxaid"></div>
+        <div class="box"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+	    <div class='band'>
+            <div class="bandGear">+</div>
+            <div class="bandGear">+</div>
+            <div class="bandGear">+</div>
+            <div class="bandGear">+</div>
+            <div class="bandGear">+</div>
+        </div>
+        <div class='band2'>
+            <div class="band2Gear">+</div>
+            <div class="band2Gear">+</div>
+            <div class="band2Gear">+</div>
+            <div class="band2Gear">+</div>
+            <div class="band2Gear">+</div>
+        </div>
+        <div class="container"></div>
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+        require('./renderer.js');
+        let count = 0;
+        const domObjects = {
+          box : document.querySelector('.box'),
+          box2 : document.querySelector('.box2'),
+          box3 : document.querySelector('.box3'),
+          box4 : document.querySelector('.box4'),
+          boxaid : document.querySelector('.boxaid'),
+          claw : document.querySelector('.claw'),
+          claw2 : document.querySelector('.claw2'),
+          claw3 : document.querySelector('.claw3'),
+          bandGears : [
+            document.querySelector(`.bandGear:nth-child(1)`),
+            document.querySelector(`.bandGear:nth-child(2)`),
+            document.querySelector(`.bandGear:nth-child(3)`),
+            document.querySelector(`.bandGear:nth-child(4)`),
+            document.querySelector(`.bandGear:nth-child(5)`)
+          ]
+        }
+        domObjects.box.addEventListener('animationend', () => {
+            domObjects.box2.style.visibility = "visible";
+            domObjects.box.classList.remove('box-animation');
+            domObjects.box.style.visibility = "hidden";
+            domObjects.claw.classList.add('claw-animation');
+            domObjects.box2.classList.add('box2-animation');
+            let i = 1;
+            domObjects.bandGears.forEach(bandGear => {
+              bandGear.style.animationPlayState = "paused";
+            });
+        });
+        domObjects.claw.addEventListener('animationend', () => {
+            domObjects.claw.style.visibility = "hidden";
+        });
+        domObjects.box2.addEventListener('animationstart', () => {
+            domObjects.claw2.style.visibility = "visible";
+            domObjects.claw2.classList.add('claw2-animation');
+            domObjects.claw.classList.remove('claw-animation');
+        });
+        domObjects.box2.addEventListener('animationend', () => {
+            domObjects.box2.classList.remove('box2-animation');
+            domObjects.box2.style.visibility = "hidden";
+            domObjects.box3.classList.add('box3-animation');
+            domObjects.box3.style.visibility = "visible";
+            domObjects.claw3.style.visibility = "visible";
+            domObjects.claw3.classList.add('claw3-animation');
+            domObjects.claw2.style.visibility = "hidden";
+            domObjects.claw2.classList.remove('claw2-animation');
+        });
+        domObjects.claw3.addEventListener('animationend', () => {
+            domObjects.claw.style.visibility = "visible";
+            domObjects.claw3.style.visibility = "hidden";
+            domObjects.claw3.classList.remove('claw3-animation');
+        });
+        domObjects.box3.addEventListener('animationend', () => {
+            domObjects.box3.classList.remove('box3-animation');
+            domObjects.box3.style.visibility = "hidden";
+            domObjects.box4.classList.add('box4-animation');
+            domObjects.box4.style.visibility = "visible";
+        });
+        domObjects.box4.addEventListener('animationend', () => {
+            domObjects.box4.classList.remove('box4-animation');
+            domObjects.box4.style.visibility = "hidden";
+        });
     </script>
   </body>
 </html>
